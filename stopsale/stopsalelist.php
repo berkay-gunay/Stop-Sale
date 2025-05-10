@@ -203,9 +203,9 @@ function turkceTarih($format, $dateStr)
                                                     <td><?php
                                                         $room_names = [];
                                                         $sql = "SELECT n.room_type_name
-                                                                FROM nis_stop_sale p
-                                                                JOIN nis_stop_sale_rooms r ON p.id = r.stop_sale_id 
-                                                                JOIN nis_room_type_name n ON r.room_type_id = n.id 
+                                                                FROM stop_sale p
+                                                                JOIN stop_sale_rooms r ON p.id = r.stop_sale_id 
+                                                                JOIN room_type_name n ON r.room_type_id = n.id 
                                                                 WHERE p.id =?";
                                                         $stmt = $baglanti->prepare($sql);
                                                         $stmt->bind_param("i", $row["id"]);
